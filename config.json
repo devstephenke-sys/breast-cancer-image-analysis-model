@@ -1,0 +1,54 @@
+{
+  "model": {
+    "architecture": "densenet121",
+    "spatial_dims": 3,
+    "in_channels": 1,
+    "num_classes_grade": 3,
+    "num_classes_response": 3,
+    "pretrained": true
+  },
+  "training": {
+    "batch_size": 8,
+    "num_epochs": 100,
+    "learning_rate": 0.0001,
+    "weight_decay": 0.00001,
+    "early_stopping_patience": 10,
+    "gradient_accumulation_steps": 1
+  },
+  "data": {
+    "primary_collection": "advanced_mri_breast_lesions",
+    "target_size": [256, 256, 32],
+    "normalize": true,
+    "augment": true,
+    "train_split": 0.8,
+    "val_split": 0.1,
+    "test_split": 0.1
+  },
+  "paths": {
+    "data_dir": "./data",
+    "checkpoints_dir": "./checkpoints",
+    "logs_dir": "./logs"
+  },
+  "tasks": {
+    "binary_classification": {
+      "enabled": true,
+      "weight": 1.0,
+      "labels": ["benign", "malignant"]
+    },
+    "grade_classification": {
+      "enabled": true,
+      "weight": 0.5,
+      "labels": ["low", "intermediate", "high"]
+    },
+    "receptor_status": {
+      "enabled": true,
+      "weight": 0.3,
+      "labels": ["ER", "PR", "HER2"]
+    },
+    "treatment_response": {
+      "enabled": true,
+      "weight": 0.3,
+      "labels": ["complete", "partial", "no_response"]
+    }
+  }
+}

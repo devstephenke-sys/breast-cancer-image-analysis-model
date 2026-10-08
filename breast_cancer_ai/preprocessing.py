@@ -54,7 +54,7 @@ class DICOMPreprocessor:
             ])
 
         if normalize:
-            transforms.append(NormalizeIntensity(subtract_mean=True, divide_std=True))
+            transforms.append(NormalizeIntensity())
 
         if augment:
             transforms.extend([

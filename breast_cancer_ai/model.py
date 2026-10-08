@@ -3,7 +3,7 @@
 import torch
 import torch.nn as nn
 from typing import Dict, Tuple
-from monai.networks.nets import DenseNet121, ResNet18
+from monai.networks.nets import DenseNet121, resnet18
 
 
 class BreastCancerClassifier(nn.Module):
@@ -49,7 +49,7 @@ class BreastCancerClassifier(nn.Module):
             feature_dim = 512
         else:
             # 2D CNN for mammography
-            self.backbone = ResNet18(
+            self.backbone = resnet18(
                 spatial_dims=2,
                 in_channels=in_channels,
                 num_classes=512,

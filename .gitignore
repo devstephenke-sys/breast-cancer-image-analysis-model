@@ -20,11 +20,10 @@ wheels/
 .installed.cfg
 *.egg
 
-# Virtual environments
+# Virtual Environment
 venv/
 env/
 ENV/
-.venv
 
 # IDE
 .vscode/
@@ -35,33 +34,18 @@ ENV/
 
 # Data
 data/
-*.dcm
-*.nii
-*.nii.gz
-*.raw
-images/
 checkpoints/
-models/
+logs/
+uploads/
 *.pth
 *.pkl
-*.joblib
-
-# Logs
-logs/
-*.log
+*.npy
+gdc_data/
+*.tsv
 
 # OS
 .DS_Store
 Thumbs.db
 
-# UV
-uv.lock
-.venv/
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb
-
-# Environment
-.env
-.env.local
+# Logs
+*.log

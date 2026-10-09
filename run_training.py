@@ -22,7 +22,7 @@ def train_model():
         batch_size=1,  # Very small batch size for 3D MRI
         num_workers=0,  # Set to 0 for Windows compatibility
         modality="MR",
-        target_size=(128, 128, 64),  # Higher resolution for better training
+        target_size=(64, 64, 32),  # Use original size that works
         augment_train=True,
     )
 
